@@ -15,13 +15,17 @@
         <div class="container">
             <nav>
                 <img src="logo.png" class="logo">
-                <ul>
-                    <li> <a href="#" class="active">Home</a></li>
-                    <li> <a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li> <a href="#">Contact</a></li>
+                <ul id="sidemenu">
+                    <li> <a href="#header" class="active">Home</a></li>
+                    <li> <a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                    <i class="fa fa-times" aria-hidden="true" onclick="closemenu()"></i>
+
                 </ul>
+                <i class="fa fa-bars" aria-hidden="true" onclick="openmenu()" ></i>
+
             </nav>
             <div class="header-text">
                 <h2>Hi,
@@ -83,9 +87,9 @@
             </div>
         </div>
     </div>
-<!-- -------------------portfolio---------------------- -->
+<!-- -------------------project---------------------- -->
 
-<div id="portfolio">
+<div id="project">
     <div class="container">
         <h1 class="sub-title">My Projects</h1>
         <div class="project">
@@ -179,6 +183,15 @@
             }
             event.currentTarget.classList.add("active-link");
             document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu= document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right ="0";
+        }
+        function closemenu(){
+            sidemenu.style.right ="-200px";
         }
     </script>
 </body>
