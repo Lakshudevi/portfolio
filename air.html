@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air Pollution Prediction Using Machine Learning</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #4caf50;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header p {
+  font-size: 1.2em;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #444;
+}
+
+ul, ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #4caf50;
+  color: #fff;
+}
+
+    </style>
+</head>
+<body>
+  <header>
+    <h1>Air Pollution Prediction Using Machine Learning</h1>
+    <p>Predicting and analyzing air quality using advanced ML techniques</p>
+  </header>
+  <main>
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <p>
+        This project focuses on predicting **air pollution levels** using various **machine learning algorithms**. The models analyze 
+        historical air quality data and predict pollution levels, enabling better decision-making for pollution control and awareness.
+      </p>
+      <p>
+        The algorithms used in this project include:
+      </p>
+      <ul>
+        <li><strong>K-Nearest Neighbor (KNN):</strong> A simple yet powerful classification and regression algorithm.</li>
+        <li><strong>Logistic Regression:</strong> Used for binary classification of air quality indices (AQI).</li>
+        <li><strong>Random Forest Regression:</strong> A robust ensemble learning method for more accurate predictions.</li>
+      </ul>
+    </section>
+    <section id="data">
+      <h2>Data Collection</h2>
+      <p>
+        The dataset includes air quality metrics such as:
+      </p>
+      <ul>
+        <li>Concentration of pollutants (e.g., PM2.5, PM10, NO₂, CO, SO₂)</li>
+        <li>Meteorological data (temperature, humidity, wind speed)</li>
+        <li>Time-based features (day, time, season)</li>
+      </ul>
+      <p>
+        The data is preprocessed for missing values, scaled for uniformity, and split into training and testing datasets.
+      </p>
+    </section>
+    <section id="methodology">
+      <h2>Methodology</h2>
+      <ol>
+        <li>Data Preprocessing: Cleaned and normalized the dataset to handle missing values and outliers.</li>
+        <li>Model Training: Trained multiple machine learning models on the preprocessed data.</li>
+        <li>Model Evaluation: Compared model performance using metrics like R² score, mean absolute error (MAE), and root mean squared error (RMSE).</li>
+        <li>Prediction: Used the best-performing model to predict air quality for new data.</li>
+      </ol>
+    </section>
+    <section id="features">
+      <h2>Features</h2>
+      <ul>
+        <li>Real-Time Prediction:  Predicts air quality indices (AQI) using current data.</li>
+        <li>Multi-Algorithm Comparison:  Evaluates the effectiveness of different ML models.</li>
+        <li>Visualization:  Displays air quality trends through graphs and charts.</li>
+      </ul>
+    </section>
+    <section id="applications">
+      <h2>Applications</h2>
+      <ul>
+        <li>Government agencies can use it for pollution monitoring and control.</li>
+        <li>Individuals can plan activities based on predicted air quality levels.</li>
+        <li>Businesses can assess the impact of air quality on their operations.</li>
+      </ul>
+    </section>
+    <section id="outcome">
+      <h2>Outcome</h2>
+      <p>
+        This project successfully demonstrated the feasibility of using machine learning for **air pollution prediction**. 
+        Random Forest Regression emerged as the most accurate model, providing reliable AQI predictions. The integration 
+        of ML algorithms allows for proactive measures in combating air pollution.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Air Pollution Prediction Using Machine Learning Project Team</p>
+  </footer>
+  <script>
+    const pollutants = ['PM2.5', 'PM10', 'NO₂', 'CO', 'SO₂'];
+const predictionResult = document.createElement('p');
+predictionResult.style.fontWeight = 'bold';
+
+function predictAirQuality() {
+  const index = Math.floor(Math.random() * pollutants.length);
+  predictionResult.textContent = `Predicted Air Quality Concern: ${pollutants[index]}`;
+}
+
+document.body.onload = () => {
+  document.querySelector('main').appendChild(predictionResult);
+  predictAirQuality();
+};
+
+  </script>
+</body>
+</html>

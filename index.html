@@ -97,42 +97,40 @@
                 <img src="image/game1.png">
                 <div class="layer">
                     <h3>2D Game development</h3>
-                    <p>we can use tkinter in python .we create 2D snake game, Tic-tac-toe game, and puzzle game are with all those being said, 2D
-                        gaming is not yet done and dusted.</p>
-                    <a href="#"><i class="fa fa-external-link"></i></a> 
+                    <!-- <p>we can use tkinter in python .we create 2D snake game, Tic-tac-toe game, and puzzle game are with all those being said, 2D
+                        gaming is not yet done and dusted.</p> -->
+                    <a href="./game.html"><i class="fa fa-external-link"></i></a> 
                 </div>
             </div>
             <div class="work">
                 <img src="image/IOT1.jpg">
                 <div class="layer">
                     <h3>Power generate using footsteps in IOT</h3>
-                    <p>The process of producing electrical power from different types of energy sources is called electricity generation. Now we have done a project ,current generate while walking in IOT. Here kinetic
-                        energy is converted into electrical energy.</p>
-                        <a href="#"><i class="fa fa-external-link"></i></a> 
+                    <!-- <p>The process of producing electrical power from different types of energy sources is called electricity generation. Now we have done a project ,current generate while walking in IOT. Here kinetic
+                        energy is converted into electrical energy.</p> -->
+                        <a href="IOT.html"><i class="fa fa-external-link"></i></a> 
 
                 </div>
             </div>
             <div class="work">
                 <img src="image/air2.jpg">
                 <div class="layer">
-                    <h3>AIR POLLUTION PREDICTION USING MACHINE LEARNING</h3>
-                    <p>Air quality Various machine learning algorithms,such as K-Nearest Neighbor (KNN), Logistic Regression,
-                         and Random Forest Regression, have been developed for air quality prediction.</p>
-                        <a href="#"><i class="fa fa-external-link"></i></a> 
+                    <h3>Air Pollution Prediction Using Machine Learning</h3>
+                    <!-- <p>Air quality Various machine learning algorithms,such as K-Nearest Neighbor (KNN), Logistic Regression,
+                         and Random Forest Regression, have been developed for air quality prediction.</p> -->
+                        <a href="air.html"><i class="fa fa-external-link"></i></a> 
 
                  </div>
             </div>
             <div class="work">
                 <img src="image/brain.png">
                 <div class="layer">
-                     <h3>ENHANCED DETECTION OF 3D BRAIN TUMORS THROUGH A DEEP LEARNING APPROACH</h3>
-                    <!-- <p>                        </p> -->
-                        <a href="#"><i class="fa fa-external-link"></i></a> 
+                     <h3>Enhanced Detection of 3D Brain Tumors Through a Deep Learning Approach</h3>
+                        <a href="brain.html"><i class="fa fa-external-link"></i></a> 
 
                  </div>
             </div>
         </div>
-        <a href="#" class="btn">See more</a>
     </div>
 
 </div>
@@ -153,12 +151,13 @@
             <a href="image/LAKSHMI DEVI S.pdf" download class="btn btn2">Download CV</a>
         </div>
         <div class="contact-right">
-            <form>
+            <form name="submit-to-google-sheet">
                 <input type="text" name="Name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
                 <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                 <button type="submit" class="btn btn2">Submit</button>
             </form>
+            <span id="msg"></span>
         </div>        
     </div>
 </div>
@@ -194,6 +193,24 @@
             sidemenu.style.right ="-200px";
         }
     </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwERGeuVZd3DRUfJ_JyMKy9Vxjkef4aaKHoNk8_wz_2fN13dfxFxqLO7daY1UfiUylY5Q/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML= ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 
 </html>   
